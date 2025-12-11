@@ -29,10 +29,10 @@ webServer:
 
 # This is the database setup for your server.
 database:
-  host: localhost
-  port: 8090
+  host: postgres
+  port: 5432
   name: turn_tracker_pro
-  user: postgres
+  user: hawkbee
   #requireSsl: true # defaults to false
   #isUnixSocket: true # defaults to false
   #maxConnectionCount: 10 # Defaults to 10, a negative or null value removes the limit
