@@ -18,8 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '^3.8.0'
-  flutter: '^3.32.0'
+  sdk: ^3.10.3
 
 dependencies:
   # The following adds the Cupertino Icons font to your application.
@@ -29,14 +28,14 @@ dependencies:
     sdk: flutter
   turn_tracker_pro_client:
     path: ../turn_tracker_pro_client
-  serverpod_flutter: 3.0.1
-  serverpod_auth_idp_flutter: 3.0.1
+  serverpod_flutter: 3.4.4
+  serverpod_auth_idp_flutter: 3.4.4
 
 dev_dependencies:
   flutter_lints: '>=3.0.0 <7.0.0'
   flutter_test:
     sdk: flutter
-
+  
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
