@@ -37,3 +37,6 @@ volumes:
 
 You need to update turn_tracker_pro_server/config/development.yaml and turn_tracker_pro_server/config/passwords.yaml to set your settings correctly
 
+# launching server
+cd /opt/turn_tracker_pro/turn_tracker_pro_server
+dart run bin/main.dart --apply-migrations
