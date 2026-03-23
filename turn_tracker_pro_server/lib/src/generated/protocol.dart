@@ -16,8 +16,8 @@ import 'package:serverpod_auth_idp_server/serverpod_auth_idp_server.dart'
     as _i3;
 import 'package:serverpod_auth_core_server/serverpod_auth_core_server.dart'
     as _i4;
-import 'greeting.dart' as _i5;
-export 'greeting.dart';
+import 'greetings/greeting.dart' as _i5;
+export 'greetings/greeting.dart';
 
 class Protocol extends _i1.SerializationManagerServer {
   Protocol._();
@@ -90,10 +90,7 @@ class Protocol extends _i1.SerializationManagerServer {
     if (className != null) return className;
 
     if (data is Map<String, dynamic> && data['__className__'] is String) {
-      return (data['__className__'] as String).replaceFirst(
-        'turn_tracker_pro.',
-        '',
-      );
+      return (data['__className__'] as String).replaceFirst('tmp.', '');
     }
 
     switch (data) {
@@ -167,5 +164,23 @@ class Protocol extends _i1.SerializationManagerServer {
       targetTableDefinitions;
 
   @override
-  String getModuleName() => 'turn_tracker_pro';
+  String getModuleName() => 'tmp';
+
+  /// Maps any `Record`s known to this [Protocol] to their JSON representation
+  ///
+  /// Throws in case the record type is not known.
+  ///
+  /// This method will return `null` (only) for `null` inputs.
+  Map<String, dynamic>? mapRecordToJson(Record? record) {
+    if (record == null) {
+      return null;
+    }
+    try {
+      return _i3.Protocol().mapRecordToJson(record);
+    } catch (_) {}
+    try {
+      return _i4.Protocol().mapRecordToJson(record);
+    } catch (_) {}
+    throw Exception('Unsupported record type ${record.runtimeType}');
+  }
 }

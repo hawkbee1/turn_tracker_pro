@@ -11,9 +11,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
-import '../endpoints/email_idp_endpoint.dart' as _i2;
-import '../endpoints/jwt_refresh_endpoint.dart' as _i3;
-import '../greeting_endpoint.dart' as _i4;
+import '../auth/email_idp_endpoint.dart' as _i2;
+import '../auth/jwt_refresh_endpoint.dart' as _i3;
+import '../greetings/greeting_endpoint.dart' as _i4;
 import 'package:serverpod_auth_idp_server/serverpod_auth_idp_server.dart'
     as _i5;
 import 'package:serverpod_auth_core_server/serverpod_auth_core_server.dart'
@@ -208,6 +208,16 @@ class Endpoints extends _i1.EndpointDispatch {
                         params['finishPasswordResetToken'],
                     newPassword: params['newPassword'],
                   ),
+        ),
+        'hasAccount': _i1.MethodConnector(
+          name: 'hasAccount',
+          params: {},
+          call:
+              (
+                _i1.Session session,
+                Map<String, dynamic> params,
+              ) async => (endpoints['emailIdp'] as _i2.EmailIdpEndpoint)
+                  .hasAccount(session),
         ),
       },
     );

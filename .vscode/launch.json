@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "turn_tracker_pro_flutter",
+            "cwd": "${workspaceFolder}/turn_tracker_pro_flutter",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "turn_tracker_pro_server",
+            "cwd": "${workspaceFolder}/turn_tracker_pro_server",
+            "request": "launch",
+            "type": "dart",
+            "preLaunchTask": "docker_compose_up",
+            "program": "bin/main.dart",
+            "env": {
+                "SERVERPOD_PASSWORD_database": "X4EyEs31epsgoWF4b6FyjZg4sCqOrR9c"
+            },
+            "args": [
+                "--apply-migrations"
+            ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "tmp (full stack)",
+            "configurations": [
+                "turn_tracker_pro_server",
+                "turn_tracker_pro_flutter"
+            ],
+            "presentation": {
+                "order": 1
+            }
+        }
+    ]
+}
