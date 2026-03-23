@@ -13,7 +13,6 @@
             "cwd": "${workspaceFolder}/turn_tracker_pro_server",
             "request": "launch",
             "type": "dart",
-            "preLaunchTask": "docker_compose_up",
             "program": "bin/main.dart",
             "env": {
                 "SERVERPOD_PASSWORD_database": "X4EyEs31epsgoWF4b6FyjZg4sCqOrR9c"
